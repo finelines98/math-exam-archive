@@ -1,0 +1,36 @@
+name: PDF Exam To Markdown Automation
+
+on:
+  push:
+    paths:
+      - 'inputs/**.pdf'
+
+jobs:
+  build-and-parse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 환경 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 필요한 도구 및 라이브러리 설치
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils pdf2svg
+          pip install PyMuPDF
+
+      - name: 파이썬 파싱 스크립트 실행
+        run: python scripts/parser.py
+
+      - name: 정돈된 데이터를 저장소에 다시 업데이트
+        run: |
+          git config --global user.name "Auto-Parser"
+          git config --global user.email "parser@github.com"
+          git add database/ images/
+          git rm -f inputs/*.pdf || true 
+          git commit -m "정제 완료: PDF 문제를 마크다운 및 이미지로 변환" || echo "변경 사항 없음"
+          git push
