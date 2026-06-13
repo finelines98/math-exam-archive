@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Heritage & Growth Color Palette */
+  --color-surface: #fcf8fb;
+  --color-surface-dim: #dcd9dc;
+  --color-surface-bright: #fcf8fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f5;
+  --color-surface-container: #f0edef;
+  --color-surface-container-high: #eae7ea;
+  --color-surface-container-highest: #e4e2e4;
+  --color-on-surface: #1b1b1d;
+  --color-on-surface-variant: #414753;
+  --color-inverse-surface: #303032;
+  --color-inverse-on-surface: #f3f0f2;
+  --color-outline: #727784;
+  --color-outline-variant: #c1c6d5;
+  --color-surface-tint: #005cba;
+  --color-primary: #004e9f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #0066cc;
+  --color-on-primary-container: #dfe8ff;
+  --color-inverse-primary: #aac7ff;
+  --color-secondary: #5d5e60;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dfdfe1;
+  --color-on-secondary-container: #616365;
+  --color-tertiary: #4f5054;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #68686d;
+  --color-on-tertiary-container: #e9e8ed;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #d7e3ff;
+  --color-primary-fixed-dim: #aac7ff;
+  --color-on-primary-fixed: #001b3e;
+  --color-on-primary-fixed-variant: #00458e;
+  --color-secondary-fixed: #e2e2e4;
+  --color-secondary-fixed-dim: #c6c6c8;
+  --color-on-secondary-fixed: #1a1c1d;
+  --color-on-secondary-fixed-variant: #454749;
+  --color-tertiary-fixed: #e3e2e7;
+  --color-tertiary-fixed-dim: #c7c6cb;
+  --color-on-tertiary-fixed: #1a1b1f;
+  --color-on-tertiary-fixed-variant: #46464b;
+  --color-background: #fcf8fb;
+  --color-on-background: #1b1b1d;
+  --color-surface-variant: #e4e2e4;
+
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Navigation */
+  .glass-nav {
+    @apply sticky top-0 z-50 w-full border-b border-outline-variant transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Squircle-inspired Containers */
+  .bento-card {
+    @apply relative overflow-hidden transition-transform duration-500 ease-out rounded-lg;
+    border-radius: 1rem; /* rounded-lg in spec */
+  }
+
+  /* Premium Buttons from spec */
+  .premium-btn-primary {
+    @apply bg-on-surface text-white px-8 py-4 rounded-md font-semibold transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
+    border-radius: 0.5rem; /* rounded-md in spec */
+  }
+
+  .premium-btn-secondary {
+    @apply border border-on-surface text-on-surface px-8 py-4 rounded-md font-semibold transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
+    border-radius: 0.5rem; /* rounded-md in spec */
+  }
+
+  /* Label Caps Utility */
+  .label-caps {
+    @apply text-[12px] font-semibold uppercase tracking-[0.1em] leading-tight;
+  }
+}

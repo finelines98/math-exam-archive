@@ -1,0 +1,56 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/src/styles/global.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+	</head>
+	<body class="min-h-screen flex flex-col bg-surface text-on-surface">
+		<nav class="glass-nav">
+			<div class="max-w-[1200px] mx-auto px-6 md:px-16 h-20 flex items-center justify-between">
+				<a href="/" class="text-xl font-bold tracking-tighter text-on-surface hover:opacity-70 transition-opacity">
+					Jun-ik & Jun-hwi
+				</a>
+				<ul class="hidden md:flex items-center gap-10 text-sm font-medium text-secondary">
+					<li><a href="/" class="hover:text-primary transition-colors">성장일기</a></li>
+					<li><a href="/definite-integral-intro" class="hover:text-primary transition-colors">학습일기</a></li>
+					<li><a href="#" class="hover:text-primary transition-colors">프로젝트</a></li>
+				</ul>
+				<div class="flex items-center gap-6 text-secondary">
+					<button class="hover:text-on-surface transition-colors">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<footer class="w-full py-12 border-t border-outline-variant bg-white">
+			<div class="max-w-[1200px] mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-tertiary">
+				<div class="font-semibold text-on-surface">Jun-ik & Jun-hwi</div>
+				<div class="flex gap-8">
+					<a href="#" class="hover:text-primary transition-colors">About</a>
+					<a href="#" class="hover:text-primary transition-colors">Contact</a>
+					<a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+				</div>
+				<p>© 2026 Jun-ik & Jun-hwi. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
