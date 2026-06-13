@@ -3,46 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junik & Junhwi | 성장 기록</title>
+    <title>Junik & Junhwi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --apple-bg: #ffffff;
+            --apple-bg-alt: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-text-grey: #86868b;
+            --apple-blue: #0066cc;
+        }
+
         body { 
             font-family: 'Inter', 'Noto Sans KR', sans-serif; 
-            background-color: #F5F5F7; 
-            color: #1D1D1F;
+            background-color: var(--apple-bg); 
+            color: var(--apple-text);
             -webkit-font-smoothing: antialiased;
+            margin: 0;
         }
-        .apple-blur {
-            background: rgba(255, 255, 255, 0.72);
+
+        .apple-nav {
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
+            transition: all 0.3s ease;
         }
-        .bento-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0,0,0,0.05);
+
+        .product-card {
+            background: var(--apple-bg-alt);
+            border-radius: 28px;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.02);
         }
-        .bento-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+
+        .product-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
-        .text-gradient {
-            background: linear-gradient(180deg, #1D1D1F 0%, #86868B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .apple-link {
+            color: var(--apple-blue);
+            font-weight: 400;
+            transition: all 0.2s ease;
+        }
+
+        .apple-link:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 apple-blur border-b border-gray-200">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-xs font-medium text-gray-600">
-            <a href="#" class="hover:text-black transition-colors flex items-center gap-2">
-                <i class="fa-solid fa-heart text-red-500"></i>
-                <span class="font-semibold">Junik & Junhwi</span>
+    <!-- Slim Navigation -->
+    <nav class="fixed top-0 w-full z-50 apple-nav border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-11 flex items-center justify-between text-[12px] font-normal text-gray-600">
+            <a href="#" class="hover:text-black transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-heart text-[10px] text-red-500"></i>
+                <span class="font-medium">Junik & Junhwi</span>
             </a>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-8">
                 <a href="#gallery" class="hover:text-black transition-colors">사진 저장소</a>
                 <a href="#diary" class="hover:text-black transition-colors">학습 일기</a>
                 <a href="#projects" class="hover:text-black transition-colors">프로젝트</a>
@@ -51,94 +80,94 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 text-center">
+    <section class="pt-32 pb-20 px-6 text-center bg-white">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gradient mb-6">
-                함께 성장하는<br>매일의 기록
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+                준익 & 준휘<br>
+                <span class="text-gray-400">함께 성장하는 기록</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-500 font-light leading-relaxed max-w-2xl mx-auto">
-                준익이와 준휘가 만들어가는 작고 소중한 일상, <br>
-                배움의 즐거움과 함께하는 프로젝트를 기록합니다.
+                작고 소중한 일상부터 배움의 여정까지.<br>
+                가장 순수한 성장의 순간들을 기록합니다.
             </p>
         </div>
     </section>
 
-    <!-- Bento Grid Section -->
-    <section class="max-w-6xl mx-auto px-6 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-6 pb-32 space-y-12">
+        
+        <!-- Section 1: Photo Gallery (The 'Hero Product' Style) -->
+        <div id="gallery" class="product-card h-[600px] relative flex items-center justify-center group">
+            <div class="text-center z-10 px-6">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3 block">Visual Archive</span>
+                <h2 class="section-title mb-6">사진 저장소</h2>
+                <p class="text-lg text-gray-500 max-w-lg mx-auto mb-8 font-light">
+                    아이들의 찰나의 순간들을 담은 디지털 앨범입니다.<br>
+                    웃음과 호기심, 모든 성장의 기록이 이곳에 있습니다.
+                </p>
+                <a href="#" class="apple-link text-lg inline-flex items-center gap-1">
+                    앨범 둘러보기 <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+            <!-- Background Shape for Apple-like feel -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-200 opacity-30"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent opacity-60"></div>
+        </div>
+
+        <!-- Section 2: Learning Diary & Projects (The 'Collection' Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- Photo Gallery (Large Card) -->
-            <div id="gallery" class="md:col-span-2 bento-card bg-white rounded-[2rem] p-10 flex flex-col justify-between h-[500px] overflow-hidden relative group">
-                <div class="relative z-10">
-                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Gallery</span>
-                    <h2 class="text-4xl font-bold mt-2 mb-4">사진 저장소</h2>
-                    <p class="text-gray-500 text-lg max-w-md">아이들의 찰나의 순간들을 기록합니다. 웃음과 눈물, 모든 성장 과정이 담긴 디지털 앨범입니다.</p>
-                </div>
-                <div class="mt-8 relative z-10">
-                    <a href="#gallery-link" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition">
-                        앨범 둘러보기 <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-                <!-- Decorative element -->
-                <div class="absolute -bottom-10 -right-10 w-80 h-80 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 transition-colors duration-700"></div>
-            </div>
-
-            <!-- Learning Diary (Medium Card) -->
-            <div id="diary" class="bento-card bg-white rounded-[2rem] p-10 flex flex-col justify-between h-[500px] overflow-hidden relative group">
-                <div class="relative z-10">
-                    <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Diary</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-4">학습 일기</h2>
-                    <p class="text-gray-500 text-base">매일 조금씩 배워가는 기쁨. 호기심 어린 질문과 정답을 찾아가는 여정을 기록합니다.</p>
-                </div>
-                <div class="mt-8 relative z-10">
-                    <a href="#diary-link" class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:underline transition">
-                        최신 일기 읽기 <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-                <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-emerald-50 rounded-full blur-3xl group-hover:bg-emerald-100 transition-colors duration-700"></div>
-            </div>
-
-            <!-- Project Section (Medium Card) -->
-            <div id="projects" class="bento-card bg-white rounded-[2rem] p-10 flex flex-col justify-between h-[400px] overflow-hidden relative group">
-                <div class="relative z-10">
-                    <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Project</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-4">함께하는 프로젝트</h2>
-                    <p class="text-gray-500 text-base">단순한 놀이를 넘어, 아이들과 함께 무언가를 설계하고 만들어가는 창의적 도전입니다.</p>
-                </div>
-                <div class="mt-8 relative z-10">
-                    <a href="#project-link" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:underline transition">
-                        진행 현황 보기 <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-                <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-purple-50 rounded-full blur-3xl group-hover:bg-purple-100 transition-colors duration-700"></div>
-            </div>
-
-            <!-- Simple About Card -->
-            <div class="md:col-span-2 bento-card bg-slate-900 text-white rounded-[2rem] p-10 flex flex-col justify-center h-[400px] relative overflow-hidden group">
-                <div class="relative z-10">
-                    <h2 class="text-3xl font-bold mb-4">사랑과 기록의 힘</h2>
-                    <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
-                        기록되지 않은 순간은 사라지지만, 기록된 순간은 추억이 됩니다. <br>
-                        준익이와 준휘의 성장을 함께 응원해 주세요.
+            <!-- Learning Diary -->
+            <div id="diary" class="product-card p-12 flex flex-col justify-between h-[450px]">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3 block">Daily Growth</span>
+                    <h2 class="text-3xl font-bold mb-4">학습 일기</h2>
+                    <p class="text-gray-500 text-lg font-light leading-relaxed">
+                        매일 조금씩 배워가는 기쁨. <br>
+                        호기심 어린 질문과 정답을 찾아가는 <br>
+                        아이들만의 정직한 여정을 기록합니다.
                     </p>
                 </div>
-                <div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                        <path fill="#FFFFFF" d="M44.7,-76.4C58.1,-69.2,70.1,-58.1,77.6,-44.7C85.1,-31.3,88.1,-15.7,86.3,-0.8C84.5,14.1,77.9,28.1,69.3,40.6C60.7,53.1,50.1,64.1,37.5,71.9C24.9,79.7,10.3,84.3,-3.8,88.5C-17.9,92.7,-31.5,96.5,-43.6,92.6C-55.7,88.7,-66.3,77.1,-74.3,63.8C-82.3,50.5,-87.7,35.5,-88.8,20.7C-89.9,6.9,-86.7,-6.7,-80.8,-20.1C-74.9,-33.5,-66.3,-46.7,-55.3,-56.2C-44.3,-65.7,-30.9,-71.5,-17.2,-76.4C-3.5,-81.4,10.5,-85.5,24.5,-83.1C38.5,-80.7,52.5,-71.9,44.7,-76.4Z" transform="translate(100 100)" />
-                    </svg>
+                <a href="#" class="apple-link text-lg inline-flex items-center gap-1 self-start">
+                    최신 기록 읽기 <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Projects -->
+            <div id="projects" class="product-card p-12 flex flex-col justify-between h-[450px]">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3 block">Creative Challenge</span>
+                    <h2 class="text-3xl font-bold mb-4">함께하는 프로젝트</h2>
+                    <p class="text-gray-500 text-lg font-light leading-relaxed">
+                        단순한 놀이를 넘어 설계하고 만드는 도전.<br>
+                        가족이 함께 고민하며 완성해가는 <br>
+                        창의적인 프로젝트들을 소개합니다.
+                    </p>
                 </div>
+                <a href="#" class="apple-link text-lg inline-flex items-center gap-1 self-start">
+                    프로젝트 현황 <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
             </div>
 
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-20 border-t border-gray-200 bg-white text-center">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="text-gray-400 text-sm font-light">
-                &copy; 2026 Junik & Junhwi Family. <br>
-                Designed with love by Hermes AI.
+        <!-- Final Call to Action (Apple's clean section) -->
+        <div class="py-20 text-center border-t border-gray-100">
+            <h3 class="text-3xl font-bold mb-6">기록의 힘을 믿습니다.</h3>
+            <p class="text-gray-500 text-lg font-light max-w-xl mx-auto">
+                기록되지 않은 순간은 사라지지만,<br>
+                기록된 순간은 영원한 추억이 됩니다.
             </p>
+        </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="py-16 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="text-[12px] text-gray-400 font-light leading-relaxed">
+                &copy; 2026 Junik & Junhwi Family. <br>
+                Designed with Apple's minimalist philosophy.
+            </div>
         </div>
     </footer>
 
