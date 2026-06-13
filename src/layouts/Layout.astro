@@ -7,86 +7,48 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ko" class="light">
+<html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 		<link rel="stylesheet" href="/src/styles/global.css" />
-		<!-- Fonts & Icons -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 	</head>
-	<body class="bg-white text-on-surface font-sans antialiased">
-		<!-- TopNavBar -->
-		<nav class="sticky top-0 w-full bg-white/70 backdrop-blur-md z-50 border-b border-outline-variant glass-nav">
-			<div class="flex justify-between items-center px-6 md:px-margin-desktop max-w-container-max mx-auto h-20">
-				<div class="font-headline-md text-headline-md font-semibold text-on-surface tracking-tight">
+	<body class="min-h-screen flex flex-col bg-surface text-on-surface">
+		<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-outline-variant">
+			<div class="flex justify-between items-center px-6 md:px-16 max-w-[1200px] mx-auto h-20">
+				<a href="/" class="font-headline-md text-headline-md font-semibold text-on-surface tracking-tight">
 					Jun-ik & Jun-hwi
-				</div>
-				<div class="hidden md:flex items-center gap-10">
-					<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="/">성장일기</a>
-					<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="/learning">학습일기</a>
-					<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="/projects">프로젝트</a>
+				</a>
+				<div class="hidden md:flex gap-10 items-center h-full">
+					<a href="/growth-diary" class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors">성장일기</a>
+					<a href="#" class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:scale-105 duration-200">학습일기</a>
+					<a href="#" class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:scale-105 duration-200">프로젝트</a>
 				</div>
 				<div class="flex items-center gap-6">
-					<button class="material-symbols-outlined text-secondary hover:scale-105 transition-transform">search</button>
-					<button class="material-symbols-outlined text-secondary hover:scale-105 transition-transform">account_circle</button>
+					<button class="material-symbols-outlined text-secondary hover:text-primary p-2 transition-transform duration-200 hover:scale-110">search</button>
+					<button class="material-symbols-outlined text-secondary hover:text-primary p-2 transition-transform duration-200 hover:scale-110">account_circle</button>
 				</div>
 			</div>
 		</nav>
 
-		<main>
+		<main class="flex-grow">
 			<slot />
 		</main>
 
-		<!-- Footer -->
-		<footer class="w-full py-stack-lg border-t border-outline-variant bg-white">
-			<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop max-w-container-max mx-auto gap-stack-md">
+		<footer class="w-full py-12 border-t border-outline-variant bg-background">
+			<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 max-w-[1200px] mx-auto gap-6">
 				<div class="font-headline-md text-headline-md text-on-surface font-semibold">Jun-ik & Jun-hwi</div>
 				<div class="flex gap-8">
-					<a class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors" href="#">About</a>
-					<a class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors" href="#">Contact</a>
-					<a class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+					<a href="#" class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors">About</a>
+					<a href="#" class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors">Contact</a>
+					<a href="#" class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors">Privacy Policy</a>
 				</div>
-				<div class="font-body-md text-body-md text-tertiary">
-					© 2024 Jun-ik & Jun-hwi. All rights reserved.
-				</div>
+				<p class="font-body-md text-body-md text-tertiary opacity-60">© 2024 Jun-ik & Jun-hwi. All rights reserved.</p>
 			</div>
 		</footer>
-
-		<script is:inline>
-			// Micro-interactions for scrolling
-			window.addEventListener('scroll', () => {
-				const nav = document.querySelector('nav');
-				if (window.scrollY > 20) {
-					nav.classList.add('shadow-sm');
-				} else {
-					nav.classList.remove('shadow-sm');
-				}
-			});
-
-			// Simple animation for cards on appearance
-			const observerOptions = {
-				threshold: 0.1
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.style.opacity = '1';
-						entry.target.style.transform = 'translateY(0)';
-					}
-				});
-			}, observerOptions);
-
-			document.querySelectorAll('article, .bento-hover').forEach(el => {
-				el.style.opacity = '0';
-				el.style.transform = 'translateY(20px)';
-				el.style.transition = 'all 0.8s cubic-bezier(0.2, 0, 0, 1)';
-				observer.observe(el);
-			});
-		</script>
 	</body>
 </html>
