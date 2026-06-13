@@ -3,7 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Heritage & Growth Color Palette */
+  /* Colors - Surface & Background */
   --color-surface: #fcf8fb;
   --color-surface-dim: #dcd9dc;
   --color-surface-bright: #fcf8fb;
@@ -19,23 +19,33 @@
   --color-outline: #727784;
   --color-outline-variant: #c1c6d5;
   --color-surface-tint: #005cba;
+
+  /* Colors - Primary */
   --color-primary: #004e9f;
   --color-on-primary: #ffffff;
   --color-primary-container: #0066cc;
   --color-on-primary-container: #dfe8ff;
   --color-inverse-primary: #aac7ff;
+
+  /* Colors - Secondary */
   --color-secondary: #5d5e60;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #dfdfe1;
   --color-on-secondary-container: #616365;
+
+  /* Colors - Tertiary */
   --color-tertiary: #4f5054;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #68686d;
   --color-on-tertiary-container: #e9e8ed;
+
+  /* Colors - Error */
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
+
+  /* Fixed Colors */
   --color-primary-fixed: #d7e3ff;
   --color-primary-fixed-dim: #aac7ff;
   --color-on-primary-fixed: #001b3e;
@@ -48,16 +58,45 @@
   --color-tertiary-fixed-dim: #c7c6cb;
   --color-on-tertiary-fixed: #1a1b1f;
   --color-on-tertiary-fixed-variant: #46464b;
+
   --color-background: #fcf8fb;
   --color-on-background: #1b1b1d;
   --color-surface-variant: #e4e2e4;
 
-  --font-inter: "Inter", system-ui, sans-serif;
+  /* Typography - Inter System */
+  --font-inter: "Inter", sans-serif;
+  
+  /* Sizes & Weights */
+  --text-display-lg: 80px;
+  --text-display-lg-mobile: 48px;
+  --text-headline-lg: 40px;
+  --text-headline-lg-mobile: 32px;
+  --text-headline-md: 28px;
+  --text-body-lg: 19px;
+  --text-body-md: 16px;
+  --text-label-caps: 12px;
+
+  /* Spacing Tokens */
+  --spacing-container-max: 1200px;
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 20px;
+  --spacing-section-gap: 160px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+
+  /* Radius Tokens */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
 @layer base {
   body {
-    background-color: var(--color-surface);
+    background-color: var(--color-background);
     color: var(--color-on-surface);
     font-family: var(--font-inter);
     -webkit-font-smoothing: antialiased;
@@ -65,33 +104,46 @@
 }
 
 @layer components {
-  /* Glassmorphism Navigation */
   .glass-nav {
-    @apply sticky top-0 z-50 w-full border-b border-outline-variant transition-all duration-300;
+    @apply sticky top-0 z-50 w-full border-b border-outline-variant;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
 
-  /* Squircle-inspired Containers */
   .bento-card {
     @apply relative overflow-hidden transition-transform duration-500 ease-out rounded-lg;
-    border-radius: 1rem; /* rounded-lg in spec */
+    border: 1px solid var(--color-outline-variant);
+  }
+  .bento-card:hover {
+    transform: scale(1.02);
   }
 
-  /* Premium Buttons from spec */
   .premium-btn-primary {
-    @apply bg-on-surface text-white px-8 py-4 rounded-md font-semibold transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
-    border-radius: 0.5rem; /* rounded-md in spec */
+    @apply px-8 py-4 rounded-md font-semibold transition-all duration-200;
+    background-color: var(--color-on-surface);
+    color: var(--color-surface-container-lowest);
+  }
+  .premium-btn-primary:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
   }
 
   .premium-btn-secondary {
-    @apply border border-on-surface text-on-surface px-8 py-4 rounded-md font-semibold transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
-    border-radius: 0.5rem; /* rounded-md in spec */
+    @apply px-8 py-4 rounded-md font-semibold transition-all duration-200 border;
+    border-color: var(--color-on-surface);
+    color: var(--color-on-surface);
+  }
+  .premium-btn-secondary:hover {
+    transform: scale(1.02);
+    background-color: var(--color-surface-container-low);
   }
 
-  /* Label Caps Utility */
   .label-caps {
-    @apply text-[12px] font-semibold uppercase tracking-[0.1em] leading-tight;
+    font-size: var(--text-label-caps);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 }
