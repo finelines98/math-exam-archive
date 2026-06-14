@@ -5,53 +5,66 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Jun-ik & Jun-hwi | Heritage & Growth">
 	<div class="max-w-[1200px] mx-auto px-6 md:px-16">
 		<!-- Hero Section -->
-		<section class="relative w-full pt-16 md:pt-24 overflow-hidden">
-			<div class="text-center md:text-left">
-				<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8 tracking-tight">
-					Heritage & <br class="hidden md:block" /> Growth
-				</h1>
-				<p class="font-body-lg text-body-lg text-tertiary max-w-2xl mb-12 leading-relaxed">
-					A digital archive documenting the curated moments, creative explorations, and evolving stories of two brothers navigating the beauty of childhood.
-				</p>
+		<section class="pt-16 md:pt-24 pb-12 text-center md:text-left">
+			<h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-[1.1] mb-8">
+				Heritage & <br class="hidden md:block" /> Growth
+			</h1>
+			<p class="text-lg md:text-xl text-tertiary max-w-2xl mb-12 leading-relaxed font-light">
+				A digital archive documenting the curated moments, creative explorations, and evolving stories of two brothers navigating the beauty of childhood.
+			</p>
+			<div class="flex justify-center md:justify-start gap-4">
+				<a href="/growth-diary" class="premium-btn-primary shadow-lg">성장일기 보기</a>
+				<a href="#" class="premium-btn-secondary">Our Journey</a>
 			</div>
-			<div class="rounded-xl overflow-hidden aspect-[16/9] bg-secondary-container shadow-sm">
-				<img class="w-full h-full object-cover" 
+		</section>
+
+		<!-- Cinematic Main Image -->
+		<section class="mb-40">
+			<div class="rounded-2xl overflow-hidden aspect-[16/9] bg-surface-container-low shadow-sm">
+				<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_zl3hkPg1rPcM2wU2L9Kn8R5qxsUQbOLychZvEdciTlkBx9-Acj6LOJmzlmsNLQaryLaIbfomJmaRut5Ny_bTgqtzNUq2AkqW4MZ43AKZUatXB15zZ-IZjxe-b0uOUs-NfT35lbwfvi86_cdHheXuUB7HzsV5DMQfRIFCM6LYE_Vbv33zfVk_rEbScNzAJiTjBxuSSCFsoM-aV6NoG5y0MtR-b-J7GnZZe8A4EfAiROnCDV7NOXCdmAS36KItGqeD7F2nF9-XQ6s" 
 					 alt="Two brothers in minimalist space" 
-					 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_zl3hkPg1rPcM2wU2L9Kn8R5qxsUQbOLychZvEdciTlkBx9-Acj6LOJmzlmsNLQaryLaIbfomJmaRut5Ny_bTgqtzNUq2AkqW4MZ43AKZUatXB15zZ-IZjxe-b0uOUs-NfT35lbwfvi86_cdHheXuUB7HzsV5DMQfRIFCM6LYE_Vbv33zfVk_rEbScNzAJiTjBxuSSCFsoM-aV6NoG5y0MtR-b-J7GnZZe8A4EfAiROnCDV7NOXCdmAS36KItGqeD7F2nF9-XQ6s" />
+					 class="w-full h-full object-cover" />
 			</div>
 		</section>
 
 		<!-- Categories Bento Grid -->
-		<section class="mt-40 grid grid-cols-1 md:grid-cols-2 gap-8 mb-40">
-			<!-- Large Card -->
-			<div class="md:col-span-2 relative h-[500px] rounded-xl overflow-hidden group bento-hover">
-				<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" 
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-40">
+			<!-- Large Card: Growth Diary -->
+			<div class="md:col-span-2 bento-card h-[500px] group relative overflow-hidden rounded-2xl">
+				<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbWwDvDb_Hh3maz2aWJUY4SUBl-aasCkt7PvVY2z6nqAwSbOJvGBr04E21uL7WhVYvZ2fbVK6Ce8DwwsnVUSge0btivziKM16pSClOZZEej-6CiQCe9raiLiKOHfyp84S9nuSzjZ4qh5c38ER9YP2dp1rUwA49DSdXKCMsfGtXLPzJGnOYxdYnIpZo99EefqjP24dSWDNg4LDv_jgX2KA_ZZXZvgWl1ozuYwXESgcG5rT26qTjsxKgJo8sMGYiOtu3EunfzMAdP7E" 
 					 alt="Children in forest" 
-					 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbWwDvDb_Hh3maz2aWJUY4SUBl-aasCkt7PvVY2z6nqAwSbOJvGBr04E21uL7WhVYvZ2fbVK6Ce8DwwsnVUSge0btivziKM16pSClOZZEej-6CiQCe9raiLiKOHfyp84S9nuSzjZ4qh5c38ER9YP2dp1rUwA49DSdXKCMsfGtXLPzJGnOYxdYnIpZo99EefqjP24dSWDNg4LDv_jgX2KA_ZZXZvgWl1ozuYwXESgcG5rT26qTjsxKgJo8sMGYiOtu3EunfzMAdP7E" />
-				<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-12 text-white">
-					<span class="font-label-caps text-label-caps uppercase tracking-widest mb-2">Primary Series</span>
-					<h2 class="font-headline-lg text-headline-lg mb-4">성장일기</h2>
-					<p class="font-body-md text-body-md text-white/80 max-w-md">The core narrative of everyday wonders and developmental milestones.</p>
+					 class="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:scale-105 transition-transform duration-700" />
+				<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-12 text-white">
+					<span class="label-caps mb-2">Primary Series</span>
+					<h2 class="text-4xl font-bold mb-4">성장일기</h2>
+					<p class="text-lg text-white/80 max-w-md">The core narrative of everyday wonders and developmental milestones.</p>
+					<a href="/growth-diary" class="mt-6 inline-flex items-center gap-2 text-white hover:underline font-medium">
+						Read More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+					</a>
 				</div>
 			</div>
-			<!-- Small Card 1 -->
-			<div class="relative h-[400px] rounded-xl overflow-hidden group bento-hover bg-surface-container">
+
+			<!-- Small Card 1: Learning Diary -->
+			<div class="bento-card h-[400px] group relative overflow-hidden rounded-2xl bg-surface-container">
 				<div class="absolute inset-0 p-12 z-10">
-					<h2 class="font-headline-md text-headline-md text-on-surface mb-2">학습일기</h2>
-					<p class="font-body-md text-body-md text-tertiary">Curated academic explorations and intellectual curiosity.</p>
+					<h2 class="text-3xl font-bold text-on-surface mb-4">학습일기</h2>
+					<p class="text-body-md text-tertiary max-w-xs">Curated academic explorations and intellectual curiosity.</p>
 				</div>
-				<img class="absolute bottom-0 right-0 w-3/4 h-3/4 object-contain translate-x-10 translate-y-10 group-hover:scale-110 transition-transform duration-700" 
+				<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CIGCD4sIm7oe-654fVmzUoBygKC2YydsWlXH2LROmUdMJR9NNbEHBNCj1rCp6G5BO9PF1POJ__XxSy9QHfzClTEzcsfkUNp7L-T-O-P-S-H-T" 
 					 alt="Learning tools" 
-					 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CIGCD4sIm7oe-654fVmzUoBygKC2YydsWlXH2LROmUdMJR9NNbEHBNCj1rCp6G5BO9PF1POJ__XxSy9QHfzClTEzcsfkUNp7ImBf5F2FONl3glCAzGhaqLQJ9cE1GY2qmtvf9Lh5iBQy5TTCA3oF28bQw8Ym3mZWEs1q8bozhv4ifuapLSvDMplSrA7yrEp-oIMsaoNQAx6lecY0Ys99gZyj1x06FRy-X3eiLAzbIb1ajT5vbcadHdwwllAGptLjCD5s-sVqCXE" />
+					 class="absolute bottom-0 right-0 w-3/4 h-3/4 object-contain translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-700" />
 			</div>
-			<!-- Small Card 2 -->
-			<div class="relative h-[400px] rounded-xl overflow-hidden group bento-hover bg-primary-container text-white">
+
+			<!-- Small Card 2: Projects -->
+			<div class="bento-card h-[400px] group relative overflow-hidden rounded-2xl bg-primary-container text-white">
 				<div class="absolute inset-0 p-12 z-10">
-					<h2 class="font-headline-md text-headline-md mb-2">프로젝트</h2>
-					<p class="font-body-md text-body-md text-white/80">Creative builds, digital experiments, and hands-on making.</p>
+					<h2 class="text-3xl font-bold mb-4">프로젝트</h2>
+					<p class="text-lg text-white/80 max-w-xs">Creative builds, digital experiments, and hands-on making.</p>
 				</div>
-				<div class="absolute bottom-0 right-0 p-8 opacity-20">
-					<span class="material-symbols-outlined text-[120px]">rocket_launch</span>
+				<div class="absolute bottom-0 right-0 p-12 opacity-20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 4h-4m-2 0h-4m-2 0v12m0-2h8m-8-2v2m0-2h8" />
+					</svg>
 				</div>
 			</div>
 		</section>
@@ -59,50 +72,49 @@ import Layout from '../layouts/Layout.astro';
 		<!-- Recent Stories -->
 		<section class="mb-40">
 			<div class="flex justify-between items-end mb-12">
-				<h2 class="font-headline-lg text-headline-lg text-on-surface">Recent Stories</h2>
-				<a class="text-primary font-body-md flex items-center gap-1 group" href="#">
-					View Archive <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+				<h2 class="text-4xl font-bold text-on-surface tracking-tighter">Recent Stories</h2>
+				<a href="#" class="text-primary font-semibold flex items-center gap-2 group hover:underline transition-all">
+					View Archive <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
 				</a>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-				<!-- Blog Card 1 -->
+				<!-- Story 1 -->
 				<article class="flex flex-col gap-4 group cursor-pointer">
-					<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
-						<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1aSEv6W-lnEoH1tvLpldwVbgatejw869zK0fIguQ5Wl3Dhzvn6pqBFtuyPiuHTeCOluXZYh-rj89V4Yqe7aWDskwYTvs5jDNlHpK5Xmd7gEpugGhSbNznDuBrTh4cLcmaH6uO1WzsV0k3tikecfPOWalWl8e_r0iWSGndfraAZSmnYuf8NAskNK6OUkAXnwDC67SZCJUf7jkT0BKvp1m3haaXaGHf3aJzVJ6Xt0GXWBXi8miY4TYozfc6SGhYFfLCpln11EbGO6E" 
 							 alt="Children laughing" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1aSEv6W-lnEoH1tvLpldwVbgatejw869zK0fIguQ5Wl3Dhzvn6pqBFtuyPiuHTeCOluXZYh-rj89V4Yqe7aWDskwYTvs5jDNlHpK5Xmd7gEpugGhSbNznDuBrTh4cLcmaH6uO1WzsV0k3tikecfPOWalWl8e_r0iWSGndfraAZSmnYuf8NAskNK6OUkAXnwDC67SZCJUf7jkT0BKvp1m3haaXaGHf3aJzVJ6Xt0GXWBXi8miY4TYozfc6SGhYFfLCpln11EbGO6E" />
-					</div>
-					<div class="flex flex-col gap-2">
-						<time class="font-label-caps text-label-caps text-secondary">NOV 12, 2024</time>
-						<h3 class="font-headline-md text-[24px] leading-tight text-on-surface group-hover:text-primary transition-colors">The First Autumn in the New Library</h3>
-						<p class="font-body-md text-body-md text-tertiary line-clamp-2">Reflecting on how space influences curiosity as the brothers discover their new creative sanctuary.</p>
-					</div>
-				</article>
-				<!-- Blog Card 2 -->
-				<article class="flex flex-col gap-4 group cursor-pointer">
-					<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
-						<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-							 alt="Digital art" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaRfpwH47RFurTtuC6L9OsDiZaUgb6XC6lx9xFL6229B7QNRgNjinyQvh37LmZ2zz7nqndAhUdPSuf7sLfswnyLup-mb2Pgpa0NzqLJQdwqqVBRFMWxHD6L4DzmnvbmpO3YQJCBWVfnHAw2jU3nuRdLMrhWD8IbokWHa90VDCO81fnCG6DBB-5MrH1m59p8pw1cj4iG-SFG5K0luKk7IJ-vcelwi82meP7kbcdFfwJ5XOUYvzqzLaDP1hKkc77Rp-mnmHz-NCyE8o" />
-					</div>
-					<div class="flex flex-col gap-2">
-						<time class="font-label-caps text-label-caps text-secondary">OCT 28, 2024</time>
-						<h3 class="font-headline-md text-[24px] leading-tight text-on-surface group-hover:text-primary transition-colors">Mastering the Digital Canvas</h3>
-						<p class="font-body-md text-body-md text-tertiary line-clamp-2">Jun-ik's first foray into generative art and the unexpected patterns he created during the weekend workshop.</p>
-					</div>
-				</article>
-				<!-- Blog Card 3 -->
-				<article class="flex flex-col gap-4 group cursor-pointer">
-					<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
-						<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-							 alt="City skyline" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaYA-aDsy6F_JFabvop_Fc1ewyfZS90kxG2FUZSyXwQL2ksxkzyC-36UphV4Al1iXBTt8VCbPQp-xQTUPOoD0q7eThLJzFnA7gL la- l" 
 							 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 					</div>
 					<div class="flex flex-col gap-2">
-						<time class="font-label-caps text-label-caps text-secondary">OCT 15, 2024</time>
-						<h3 class="font-headline-md text-[24px] leading-tight text-on-surface group-hover:text-primary transition-colors">Luminous Shadows of the City</h3>
-						<p class="font-body-md text-body-md text-tertiary line-clamp-2">A photographic study of how the two brothers interact with the changing seasons through play.</p>
+						<span class="label-caps text-secondary">NOV 12, 2024</span>
+						<h3 class="text-2xl font-bold leading-tight text-on-surface group-hover:text-primary transition-colors">The First Autumn in the New Library</h3>
+						<p class="text-body-md text-tertiary line-clamp-2">Reflecting on how space influences curiosity as the brothers discover their new creative sanctuary.</p>
+					</div>
+				</article>
+				<!-- Story 2 -->
+				<article class="flex flex-col gap-4 group cursor-pointer">
+					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbWwDvDb_Hh3maz2aWJUY4SUBl-aasCkt7PvVY2z6nqAwSbOJvGBr04E21uL7WhVYvZ2fbVK6Ce8DwwsnV uma la- la" 
+							 alt="Digital art" 
+							 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					</div>
+					<div class="flex flex-col gap-2">
+						<span class="label-caps text-secondary">OCT 28, 2024</span>
+						<h3 class="text-2xl font-bold leading-tight text-on-surface group-hover:text-primary transition-colors">The First Digital Canvas</h3>
+						<p class="text-body-md text-tertiary line-clamp-2">Jun-ik's first foray into generative art and the unexpected patterns he created during the weekend workshop.</p>
+					</div>
+				</article>
+				<!-- Story 3 -->
+				<article class="flex flex-col gap-4 group cursor-pointer">
+					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaYA-aDsy6F_JFabvop_ uma la- la" 
+							 alt="City skyline" 
+							 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					</div>
+					<div class="flex flex-col gap-2">
+						<span class="label-caps text-secondary">OCT 15, 2024</span>
+						<h3 class="text-2xl font-bold leading-tight text-on-surface group-hover:text-primary transition-colors">Luminous Shadows of the City</h3>
+						<p class="text-body-md text-body-md text-tertiary line-clamp-2">A photographic study of how the two brothers interact with the changing seasons through play.</p>
 					</div>
 				</article>
 			</div>

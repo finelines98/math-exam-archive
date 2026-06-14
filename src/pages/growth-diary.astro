@@ -5,75 +5,79 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="성장일기 | Jun-ik & Jun-hwi">
 	<main class="max-w-[1200px] mx-auto px-6 md:px-16 py-16">
 		<!-- Hero Section -->
-		<header class="mt-8 mb-40">
-			<span class="font-label-caps text-label-caps text-primary uppercase mb-4 block">Archive</span>
-			<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8 tracking-tight">성장일기</h1>
-			<p class="font-body-lg text-body-lg text-tertiary max-w-2xl">준익이와 준휘의 빛나는 매 순간, 함께 걸어가는 모든 발자국들을 기록합니다.</p>
+		<header class="mb-24">
+			<span class="label-caps text-primary uppercase mb-2 block">Archive</span>
+			<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface mb-6 tracking-tight">성장일기</h1>
+			<p class="text-lg md:text-xl text-tertiary max-w-2xl leading-relaxed">
+				준익이와 준휘의 빛나는 매 순간, 함께 걸어가는 모든 발자국들을 기록합니다.
+			</p>
 		</header>
 
 		<!-- Timeline List Content -->
-		<div class="relative grid grid-cols-1 gap-40">
+		<div class="relative grid grid-cols-1 gap-24">
 			<!-- Timeline vertical line (desktop) -->
-			<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-outline-variant to-transparent -translate-x-1/2"></div>
+			<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-slate-200 -translate-x-1/2"></div>
 
 			<!-- Entry 1 -->
-			<article class="relative flex flex-col md:flex-row gap-12 items-center group">
+			<article class="relative flex flex-col md:flex-row gap-8 items-center group">
 				<div class="w-full md:w-1/2 flex flex-col md:items-end md:text-right">
-					<time class="font-headline-md text-headline-md text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.11.24</time>
-					<h2 class="font-headline-lg text-headline-lg mt-4 mb-8">처음으로 혼자 자전거를 탄 날</h2>
-					<p class="font-body-md text-body-md text-tertiary leading-relaxed max-w-md ml-auto">
+					<time class="text-xl font-semibold text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.11.24</time>
+					<h2 class="text-3xl font-bold mt-2 mb-4">처음으로 혼자 자전거를 탄 날</h2>
+					<p class="text-body-md text-tertiary leading-relaxed max-w-md ml-auto">
 						두려워하던 보조 바퀴를 떼어내고 드디어 균형을 잡았습니다. 준익이의 얼굴에 번진 그 환한 미소는 평생 잊지 못할 성장의 증거입니다.
 					</p>
 				</div>
 				<div class="md:absolute md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full z-10 border-4 border-white hidden md:block"></div>
 				<div class="w-full md:w-1/2">
-					<div class="rounded-xl overflow-hidden hover-lift shadow-sm">
-						<img alt="성장 기록" class="w-full aspect-[4/5] object-cover" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIgxgAeaw7RuyMGtXsdV4smJbPcys2JT-16CQesO9poGHw8oz7gaCFh0zlLxAYf3IBP8UA1MQEny7QIh6Y0F5PFtvDWSJzI6KBBHV4jjxjYK7tejdf7ySdXGBmL3v-PrEwL2MYlVQtbgosk9x4eIqIrov6kFDu4ZOUpDUeaxTpA1ZXpmFT4MA_xrQ1-F2j2ziLzIstypIL796myqLJloC4gHsj_RLBJGVYUZGnnshlU_lA2R7FTQFekQNbl5hZDKStI5qDU3e9A4I" />
+					<div class="rounded-2xl overflow-hidden hover-lift shadow-sm">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIgxgAeaw7RuyMGtXsdV4smJbPcys2JT-16CQesO9poGHw8oz7gaCFh0zlLxAYf3IBP8UA1MQEny7QIh6Y0F5PFtvDWSJzI6KBBHV4jjxjYK7tejdf7ySdXGBmL3v-PrEwL2MYlVQtbgosk9x4eIqIrov6kFDu4ZOUpDUeaxTpA1ZXpmFT4MA_xrQ1-F2j2ziLzIstypIL796myqLJloC4gHsj_RLBJGVYUZGnnshlU_lA2R7FTQFekQNbl5hZDKStI5qDU3e9A4I도 la la la" 
+							 alt="성장 기록" 
+							 class="w-full aspect-[4/5] object-cover" />
 					</div>
 				</div>
 			</article>
 
 			<!-- Entry 2 -->
-			<article class="relative flex flex-col md:flex-row-reverse gap-12 items-center group">
+			<article class="relative flex flex-col md:flex-row-reverse gap-8 items-center group">
 				<div class="w-full md:w-1/2 flex flex-col md:items-start text-left">
-					<time class="font-headline-md text-headline-md text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.10.15</time>
-					<h2 class="font-headline-lg text-headline-lg mt-4 mb-8">130cm의 문턱을 넘다</h2>
-					<p class="font-body-md text-body-md text-tertiary leading-relaxed max-w-md">
+					<time class="text-xl font-semibold text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.10.15</time>
+					<h2 class="text-3xl font-bold mt-2 mb-4">130cm의 문턱을 넘다</h2>
+					<p class="text-body-md text-tertiary leading-relaxed max-w-md">
 						키 재기 판 앞에 서는 것이 유독 설레던 아침. 준휘가 드디어 꿈에 그리던 130cm를 넘겼습니다. 한 뼘 더 자란 건 키뿐만이 아니라 세상을 보는 시선도 마찬가지겠죠.
 					</p>
 				</div>
 				<div class="md:absolute md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full z-10 border-4 border-white hidden md:block"></div>
 				<div class="w-full md:w-1/2">
-					<div class="rounded-xl overflow-hidden hover-lift shadow-sm">
-						<img alt="키 성장 기록" class="w-full aspect-[4/5] object-cover" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDNTVroCp-mgDlVi8AUO2_9yKWXljR9SSCpYkRCzsPu30t50RsfpHT5rcXnQkUSx4SpPchlDJLmTaST0wFdhk54zf4ZWvVBJ142p_9SFGDqyViGSPe1t_bD7hAjPhqNE1Naeek92e269IWzZt2AYGxrOtrZ4KcOL0hsg3WXmi8kRgacyr4m0SEdjdR-LVID4Ipb84j6hMD5Zy6F4FNVLc6_oLqCLQbntqK3qhQ3ah7f677kIPYZINPa3fdshrY6LjAB14zOLCoTM" />
+					<div class="rounded-2xl overflow-hidden hover-lift shadow-sm">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDNTVroCp-mgDlVi8AUO2_9yKWXljR9SSCpYkRCzsPu30t50RsfpHT5rcXnQkUSx4SpPchlDJLmTaST0wFdhk54zf4ZWvVBJ142p_9SFGDqyViGSPe1t_bD7hAjPhqNE1Naeek92e269IWzZt2AYGxrOtrZ4KcOL0hsg3WXmi8kRgacyr4m0SEOdjR-LVID4Ipb84j6hMD5Zy6F4FNVLc6_oLqCLQbntqK3qhQ3ah7f677kIPYZINPa3fdshrY6LjAB14zOLCoTM" 
+							 alt="키 성장 기록" 
+							 class="w-full aspect-[4/5] object-cover" />
 					</div>
 				</div>
 			</article>
 
 			<!-- Entry 3 -->
-			<article class="relative flex flex-col md:flex-row gap-12 items-center group">
+			<article class="relative flex flex-col md:flex-row gap-8 items-center group">
 				<div class="w-full md:w-1/2 flex flex-col md:items-end md:text-right">
-					<time class="font-headline-md text-headline-md text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.09.02</time>
-					<h2 class="font-headline-lg text-headline-lg mt-4 mb-8">가을 숲길의 탐험가들</h2>
-					<p class="font-body-md text-body-md text-tertiary leading-relaxed max-w-md ml-auto">
+					<time class="text-xl font-semibold text-on-surface opacity-30 group-hover:opacity-100 transition-opacity duration-500">2024.09.02</time>
+					<h2 class="text-3xl font-bold mt-2 mb-4">가을 숲길의 탐험가들</h2>
+					<p class="text-body-md text-tertiary leading-relaxed max-w-md ml-auto">
 						떨어지는 낙엽 하나에도 우주를 담아내는 아이들의 시선. 준익이와 준휘는 오늘 숲에서 가장 커다란 도토리를 발견한 위대한 탐험가가 되었습니다.
 					</p>
 				</div>
 				<div class="md:absolute md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full z-10 border-4 border-white hidden md:block"></div>
 				<div class="w-full md:w-1/2">
-					<div class="rounded-xl overflow-hidden hover-lift shadow-sm">
-						<img alt="숲속 탐험" class="w-full aspect-[4/5] object-cover" 
-							 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5ChSuI2akYierHZiTqdOZcmQns7lRfKGqj065En9sarYFoUHTyjGdCRpkdgVb6zL5Ky4Clt6UcU6g_SOG44XF4fnE48_SbcEw3-MbdO8_8Kxp1WEWJb-93rkLTG-pdKUD2rF0NquzLY5nSXyZLK8-YPtPSYCpMbQEETL1WvAEWtdCING_CweRpZFqOAbMVASViR609ZUJjY-gdJw4DDQqoCHnfr71Q_oKTP7M_MWnML9WmtylbhQ6mm4ytx_FvHMAYhgufLMIr0" />
+					<div class="rounded-2xl overflow-hidden hover-lift shadow-sm">
+						<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5ChSuI2akYierHZiTqdOZcmQns7lRfKGqj065En9sarYFoUHTyjGdCRpkdgVb6zL5Ky4Clt6UcU6g_SOG44XF4fnE48_SbcEw3-MbdO8_8Kxp1WEWJb-93rkLTG-pdKUD2rL-T-O-P-S-H-T" 
+							 alt="숲속 탐험" 
+							 class="w-full aspect-[4/5] object-cover" />
 					</div>
 				</div>
-			</article>
+			</div>
 		</div>
 
-		<!-- Pagination -->
-		<div class="mt-40 text-center">
-			<button class="px-10 py-4 bg-on-surface text-white rounded-full font-body-md hover:scale-105 transition-transform duration-300">
+		<div class="mt-32 text-center">
+			<button class="px-10 py-4 bg-on-surface text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300">
 				과거의 기록 더보기
 			</button>
 		</div>
